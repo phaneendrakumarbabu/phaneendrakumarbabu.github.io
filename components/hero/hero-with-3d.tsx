@@ -5,6 +5,7 @@ import { ShaderAnimation } from "@/components/ui/shader-animation"
 import { SplineScene } from "@/components/ui/spline"
 import { Spotlight } from "@/components/ui/spotlight"
 import { Card } from "@/components/ui/card"
+import { InteractiveHoverButton } from "@/components/ui/interactive-hover-button"
 import Link from "next/link"
 
 export function HeroWith3D() {
@@ -74,7 +75,7 @@ export function HeroWith3D() {
                   and solving complex technical challenges. Combining security expertise with modern development practices.
                 </motion.p>
 
-                <motion.div className="mt-8 flex gap-4" variants={itemVariants}>
+                <motion.div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center" variants={itemVariants}>
                   <Link
                     href="#projects"
                     className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
@@ -87,6 +88,23 @@ export function HeroWith3D() {
                   >
                     Get in Touch
                   </Link>
+                </motion.div>
+                
+                <motion.div className="mt-6" variants={itemVariants}>
+                  <a 
+                    href="/resume.pdf" 
+                    download="Goru_Phaneendra_Resume.pdf"
+                    className="inline-block"
+                    onClick={(e) => {
+                      // If resume.pdf doesn't exist, prevent default and show message
+                      // You can update this when you add your actual resume file
+                    }}
+                  >
+                    <InteractiveHoverButton
+                      text="Download Resume"
+                      className="w-auto min-w-[180px] border-cyan-500/50 bg-black/50 text-cyan-400 hover:border-cyan-400 hover:bg-cyan-500/10 [&>div]:bg-cyan-500/20 [&>div]:group-hover:bg-cyan-500"
+                    />
+                  </a>
                 </motion.div>
               </motion.div>
 

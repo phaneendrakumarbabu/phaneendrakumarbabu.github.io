@@ -5,7 +5,7 @@ import { Mail, Linkedin, Github, Twitter } from "lucide-react"
 import { BackgroundPaths } from "@/components/ui/background-paths"
 
 const socialLinks = [
-  { icon: Mail, label: "Email", href: "mailto:hello@alexchen.dev" },
+  { icon: Mail, label: "Email", href: "mailto:goruphaneendra@gmail.com" },
   { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
   { icon: Github, label: "GitHub", href: "https://github.com" },
   { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
@@ -34,7 +34,7 @@ export function ContactSection() {
   return (
     <section id="contact" className="relative py-20 md:py-32 px-4 md:px-8 bg-black overflow-hidden">
       <BackgroundPaths />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 z-[1]" />
       <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.div className="text-center mb-12" variants={itemVariants}>

@@ -19,7 +19,7 @@ function FloatingPaths({ position }: { position: number }) {
     return (
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <svg
-                className="w-full h-full text-cyan-400/60 dark:text-cyan-400/60"
+                className="w-full h-full text-cyan-400 dark:text-cyan-400"
                 viewBox="0 0 696 316"
                 fill="none"
                 preserveAspectRatio="xMidYMid slice"
@@ -30,12 +30,12 @@ function FloatingPaths({ position }: { position: number }) {
                         key={path.id}
                         d={path.d}
                         stroke="currentColor"
-                        strokeWidth={path.width + 0.2}
-                        strokeOpacity={0.2 + path.id * 0.04}
-                        initial={{ pathLength: 0.3, opacity: 0.8 }}
+                        strokeWidth={path.width + 0.4}
+                        strokeOpacity={0.4 + path.id * 0.05}
+                        initial={{ pathLength: 0.3, opacity: 1 }}
                         animate={{
                             pathLength: 1,
-                            opacity: [0.5, 0.9, 0.5],
+                            opacity: [0.7, 1, 0.7],
                             pathOffset: [0, 1, 0],
                         }}
                         transition={{
