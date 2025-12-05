@@ -55,12 +55,25 @@ export function ContactSection() {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 rounded-lg border border-neutral-700 text-neutral-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300"
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  className="relative p-4 rounded-xl border border-neutral-700 bg-black/40 backdrop-blur-sm text-neutral-400 hover:text-cyan-400 hover:border-cyan-500/50 transition-all duration-300 group overflow-hidden"
+                  whileHover={{ scale: 1.1, y: -4 }}
                   whileTap={{ scale: 0.95 }}
                   aria-label={link.label}
                 >
-                  <Icon className="w-5 h-5" />
+                  {/* Hover glow effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={false}
+                  />
+                  {/* Icon */}
+                  <Icon className="w-5 h-5 relative z-10 group-hover:scale-110 transition-transform duration-300" />
+                  {/* Ripple effect on click */}
+                  <motion.div
+                    className="absolute inset-0 rounded-xl bg-cyan-500/20"
+                    initial={{ scale: 0, opacity: 0.5 }}
+                    whileTap={{ scale: 2, opacity: 0 }}
+                    transition={{ duration: 0.4 }}
+                  />
                 </motion.a>
               )
             })}

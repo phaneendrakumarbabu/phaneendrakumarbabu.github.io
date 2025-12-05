@@ -119,8 +119,19 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
+  }
+  /* Improve touch targets for mobile */
+  button, a {
+    @apply touch-manipulation;
+  }
+  /* Better focus states for accessibility */
+  *:focus-visible {
+    @apply outline-2 outline-offset-2 outline-cyan-500;
   }
 }
 

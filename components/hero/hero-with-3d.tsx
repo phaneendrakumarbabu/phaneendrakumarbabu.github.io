@@ -47,7 +47,7 @@ export function HeroWith3D() {
       {/* Content */}
       <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
         <motion.div className="w-full max-w-6xl" variants={containerVariants} initial="hidden" animate="visible">
-          <Card className="w-full bg-black/[0.7] border border-neutral-800/50 backdrop-blur-sm overflow-hidden h-[500px] md:h-[600px]">
+          <Card className="w-full bg-black/[0.7] border border-neutral-800/50 backdrop-blur-sm overflow-hidden h-[500px] md:h-[600px] shadow-2xl shadow-black/50">
             <div className="flex flex-col md:flex-row h-full">
               {/* Left content */}
               <motion.div
@@ -76,18 +76,34 @@ export function HeroWith3D() {
                 </motion.p>
 
                 <motion.div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center" variants={itemVariants}>
-                  <Link
-                    href="#projects"
-                    className="px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300"
-                  >
-                    View My Work
-                  </Link>
-                  <Link
-                    href="#contact"
-                    className="px-6 py-3 border border-neutral-600 text-neutral-300 rounded-lg font-medium hover:border-cyan-500/50 hover:text-cyan-400 transition-all duration-300"
-                  >
-                    Get in Touch
-                  </Link>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link
+                      href="#projects"
+                      className="relative px-6 py-3 min-h-[48px] flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium transition-all duration-300 overflow-hidden group touch-manipulation"
+                    >
+                      <span className="relative z-10">View My Work</span>
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                      />
+                      <motion.div
+                        className="absolute inset-0 shadow-lg shadow-cyan-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                      />
+                    </Link>
+                  </motion.div>
+                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                    <Link
+                      href="#contact"
+                      className="relative px-6 py-3 min-h-[48px] flex items-center justify-center border border-neutral-600 text-neutral-300 rounded-lg font-medium transition-all duration-300 overflow-hidden group touch-manipulation"
+                    >
+                      <span className="relative z-10">Get in Touch</span>
+                      <motion.div
+                        className="absolute inset-0 border-cyan-500/50 bg-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                      />
+                    </Link>
+                  </motion.div>
                 </motion.div>
                 
                 <motion.div className="mt-6" variants={itemVariants}>

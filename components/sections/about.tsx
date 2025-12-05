@@ -38,24 +38,33 @@ export function AboutSection() {
 
           <div className="grid md:grid-cols-2 gap-12">
             <motion.div className="space-y-8" variants={itemVariants}>
-              <div className="relative p-6 rounded-xl bg-black/60 backdrop-blur-sm border border-neutral-800/50">
+              <motion.div 
+                className="relative p-6 rounded-xl bg-black/60 backdrop-blur-sm border border-neutral-800/50 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
+                whileHover={{ y: -2 }}
+              >
                 <p className="text-white text-lg md:text-xl leading-relaxed font-light">
                   I'm a cybersecurity student with a strong foundation in coding, passionate about building secure and
                   efficient applications. My coding knowledge helps me understand both the defensive and offensive aspects
                   of cybersecurity.
                 </p>
-              </div>
-              <div className="relative p-6 rounded-xl bg-black/60 backdrop-blur-sm border border-neutral-800/50">
+              </motion.div>
+              <motion.div 
+                className="relative p-6 rounded-xl bg-black/60 backdrop-blur-sm border border-neutral-800/50 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
+                whileHover={{ y: -2 }}
+              >
                 <p className="text-white text-lg md:text-xl leading-relaxed font-light">
                   I'm dedicated to learning and applying security best practices in development, combining my technical
                   skills with a security-first mindset. Whether it's secure coding, vulnerability assessment, or building
                   robust applications, I approach every project with attention to both functionality and security.
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
 
             <motion.div className="space-y-6" variants={itemVariants}>
-              <div className="relative p-6 rounded-xl bg-black/60 backdrop-blur-sm border border-neutral-800/50">
+              <motion.div 
+                className="relative p-6 rounded-xl bg-black/60 backdrop-blur-sm border border-neutral-800/50 shadow-lg shadow-black/30 hover:shadow-xl hover:shadow-cyan-500/10 hover:border-cyan-500/30 transition-all duration-300"
+                whileHover={{ y: -2 }}
+              >
                 <h3 className="text-xl md:text-2xl font-semibold text-cyan-400 mb-6">Skills & Expertise</h3>
                 <div className="flex flex-wrap gap-3">
                   {[
@@ -68,15 +77,17 @@ export function AboutSection() {
                     "Secure Coding",
                     "Web Development",
                   ].map((skill) => (
-                    <span
+                    <motion.span
                       key={skill}
-                      className="px-4 py-2 bg-neutral-900/80 border border-cyan-500/30 rounded-full text-base text-white font-medium hover:border-cyan-500/60 hover:bg-neutral-800/80 transition-all duration-300"
+                      className="px-4 py-2 bg-neutral-900/80 border border-cyan-500/30 rounded-full text-base text-white font-medium hover:border-cyan-500/60 hover:bg-neutral-800/80 transition-all duration-300 cursor-default"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
                     >
                       {skill}
-                    </span>
+                    </motion.span>
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </motion.div>

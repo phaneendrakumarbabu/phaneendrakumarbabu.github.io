@@ -76,7 +76,12 @@ export function ProjectsSection() {
                 variants={itemVariants}
                 whileHover={{ y: -8 }}
               >
-                <div className="relative p-8 rounded-2xl border border-neutral-800/50 bg-neutral-900/50 backdrop-blur-sm overflow-hidden transition-all duration-500 group-hover:border-cyan-500/50 group-hover:bg-neutral-900/80">
+                <div className="relative p-8 rounded-2xl border border-neutral-800/50 bg-neutral-900/50 backdrop-blur-sm overflow-hidden transition-all duration-500 group-hover:border-cyan-500/50 group-hover:bg-neutral-900/80 shadow-lg shadow-black/50 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
+                  {/* Multi-layer shadow effect */}
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 blur-xl" />
+                  </div>
+                  
                   {/* Gradient overlay on hover */}
                   <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
                   
@@ -84,6 +89,9 @@ export function ProjectsSection() {
                   <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                     <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 blur-xl" />
                   </div>
+                  
+                  {/* Inner shadow for depth */}
+                  <div className="absolute inset-0 rounded-2xl shadow-inner shadow-black/50 opacity-50" />
 
                   <div className="relative z-10">
                     <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
