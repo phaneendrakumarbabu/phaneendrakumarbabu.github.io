@@ -6,8 +6,8 @@ import { BackgroundPaths } from "@/components/ui/background-paths"
 
 const socialLinks = [
   { icon: Mail, label: "Email", href: "mailto:goruphaneendra@gmail.com" },
-  { icon: Linkedin, label: "LinkedIn", href: "https://linkedin.com" },
-  { icon: Github, label: "GitHub", href: "https://github.com" },
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/kumar-babu-b67b50320?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" },
+  { icon: Github, label: "GitHub", href: "https://github.com/phaneendrakumarbabu" },
   { icon: Twitter, label: "Twitter", href: "https://twitter.com" },
 ]
 
