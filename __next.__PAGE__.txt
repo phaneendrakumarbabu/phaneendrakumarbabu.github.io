@@ -1,0 +1,13 @@
+1:"$Sreact.fragment"
+2:I[63780,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"Navbar"]
+3:I[34581,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"ScrollToTop"]
+4:I[18127,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"HeroWith3D"]
+5:I[19465,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"SectionDivider"]
+6:I[25093,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"ShowcaseScrollSection"]
+7:I[48032,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"AboutSection"]
+8:I[66844,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"ProjectsSection"]
+9:I[57841,["/_next/static/chunks/0f275ba3cd3f3aec.js","/_next/static/chunks/78839bddd9b7ce42.js","/_next/static/chunks/1773f4ca21f55614.js"],"ContactSection"]
+a:I[97367,["/_next/static/chunks/ff1a16fafef87110.js","/_next/static/chunks/247eb132b7f7b574.js"],"OutletBoundary"]
+b:"$Sreact.suspense"
+0:{"buildId":"d1NNpOwBL3m_vFOGyR3h8","rsc":["$","$1","c",{"children":[["$","main",null,{"className":"min-h-screen bg-black","children":[["$","$L2",null,{}],["$","$L3",null,{}],["$","$L4",null,{}],["$","$L5",null,{}],["$","$L6",null,{}],["$","$L5",null,{}],["$","$L7",null,{}],["$","$L5",null,{}],["$","$L8",null,{}],["$","$L5",null,{}],["$","$L9",null,{}]]}],[["$","script","script-0",{"src":"/_next/static/chunks/78839bddd9b7ce42.js","async":true}],["$","script","script-1",{"src":"/_next/static/chunks/1773f4ca21f55614.js","async":true}]],["$","$La",null,{"children":["$","$b",null,{"name":"Next.MetadataOutlet","children":"$@c"}]}]]}],"loading":null,"isPartial":false}
+c:null
