@@ -121,9 +121,12 @@
   }
   html {
     scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
   /* Improve touch targets for mobile */
   button, a {
@@ -132,6 +135,20 @@
   /* Better focus states for accessibility */
   *:focus-visible {
     @apply outline-2 outline-offset-2 outline-cyan-500;
+  }
+  /* Performance optimizations */
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  /* Smooth animations */
+  [data-framer-component] {
+    will-change: transform;
+  }
+  /* Optimize scrolling */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-padding-top: 100px;
+    }
   }
 }
 

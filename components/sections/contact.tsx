@@ -180,10 +180,10 @@ export function ContactSection() {
                   <Button
                     type="submit"
                     variant="default"
-                    className="w-full text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10"
+                    className="w-full text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10 flex items-center justify-center gap-2 group"
                   >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send Message
+                    <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                    <span>Send Message</span>
                   </Button>
                 </form>
               </div>

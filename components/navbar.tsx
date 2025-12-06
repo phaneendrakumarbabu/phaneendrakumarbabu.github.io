@@ -88,13 +88,27 @@ export function Navbar() {
                 <Link
                   href={item.href}
                   onClick={(e) => handleClick(e, item.href)}
-                  className={`px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg border ${
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg border overflow-hidden group ${
                     isActive
                       ? "text-cyan-400 bg-cyan-500/10 border-cyan-500/50 shadow-lg shadow-cyan-500/20"
                       : "text-neutral-300 hover:text-cyan-400 border-transparent hover:border-neutral-700 hover:bg-neutral-900/50"
                   }`}
                 >
-                  {item.label}
+                  {/* Glow effect on active/hover */}
+                  {isActive && (
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 blur-xl opacity-50"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.5 }}
+                      transition={{ duration: 0.3 }}
+                    />
+                  )}
+                  <span className="relative z-10">{item.label}</span>
+                  {/* Hover glow effect */}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                    initial={false}
+                  />
                 </Link>
               </motion.div>
             )
@@ -129,13 +143,27 @@ export function Navbar() {
                     <Link
                       href={item.href}
                       onClick={(e) => handleClick(e, item.href)}
-                      className={`block px-4 py-4 text-base font-medium rounded-lg border transition-all duration-300 touch-manipulation min-h-[48px] flex items-center ${
+                      className={`relative block px-4 py-4 text-base font-medium rounded-lg border transition-all duration-300 touch-manipulation min-h-[48px] flex items-center overflow-hidden group ${
                         isActive
-                          ? "text-cyan-400 bg-cyan-500/10 border-cyan-500/50"
+                          ? "text-cyan-400 bg-cyan-500/10 border-cyan-500/50 shadow-lg shadow-cyan-500/20"
                           : "text-neutral-300 hover:text-cyan-400 border-neutral-800 hover:border-cyan-500/50 hover:bg-neutral-900/50"
                       }`}
                     >
-                      {item.label}
+                      {/* Glow effect on active/hover */}
+                      {isActive && (
+                        <motion.div
+                          className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 blur-xl opacity-50"
+                          initial={{ opacity: 0 }}
+                          animate={{ opacity: 0.5 }}
+                          transition={{ duration: 0.3 }}
+                        />
+                      )}
+                      <span className="relative z-10">{item.label}</span>
+                      {/* Hover glow effect */}
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-cyan-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                        initial={false}
+                      />
                     </Link>
                   </motion.div>
                 )
