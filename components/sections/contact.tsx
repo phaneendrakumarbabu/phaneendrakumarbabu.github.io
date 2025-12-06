@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Linkedin, Github, Twitter, Copy, Check, Send, MapPin, Clock } from "lucide-react"
+import { Mail, Linkedin, Github, Copy, Check, Send, MapPin, Clock } from "lucide-react"
 import { BackgroundPaths } from "@/components/ui/background-paths"
 import { useState } from "react"
 import { useToast } from "@/hooks/use-toast"
@@ -30,13 +30,6 @@ const socialLinks = [
     href: "https://github.com/phaneendrakumarbabu",
     value: "GitHub Profile",
     color: "from-purple-500/20 to-pink-500/20"
-  },
-  { 
-    icon: Twitter, 
-    label: "Twitter", 
-    href: "https://twitter.com",
-    value: "Twitter Profile",
-    color: "from-cyan-500/20 to-blue-500/20"
   },
 ]
 
