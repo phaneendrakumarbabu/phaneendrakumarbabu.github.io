@@ -38,6 +38,8 @@ const InteractiveHoverButton = React.forwardRef<
 
       )}
 
+      suppressHydrationWarning
+
       {...props}
 
     >

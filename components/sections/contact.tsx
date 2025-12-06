@@ -216,6 +216,7 @@ export function ContactSection() {
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Copy email"
+                    suppressHydrationWarning
                   >
                     {copied ? (
                       <Check className="w-4 h-4 text-green-400" />
