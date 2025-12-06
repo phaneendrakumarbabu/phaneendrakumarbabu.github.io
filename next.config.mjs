@@ -6,6 +6,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  output: 'export', // Required for static HTML export to GitHub Pages
 }
 
 export default nextConfig
