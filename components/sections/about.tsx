@@ -56,7 +56,7 @@ export function AboutSection() {
                   I'm dedicated to learning and applying security best practices in development, combining my technical
                   skills with a security-first mindset. Whether it's secure coding, vulnerability assessment, or building
                   robust applications, I approach every project with attention to both functionality and security.
-                </p>
+              </p>
               </motion.div>
             </motion.div>
 

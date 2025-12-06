@@ -93,24 +93,24 @@ export function ProjectsSection() {
                   {/* Inner shadow for depth */}
                   <div className="absolute inset-0 rounded-2xl shadow-inner shadow-black/50 opacity-50" />
 
-                  <div className="relative z-10">
+                <div className="relative z-10">
                     <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                      {project.title}
-                    </h3>
+                    {project.title}
+                  </h3>
                     <p className="text-neutral-300 mb-6 leading-relaxed text-sm md:text-base">
                       {project.description}
                     </p>
 
                     <div className="flex flex-wrap gap-2 mb-6">
-                      {project.tags.map((tag) => (
-                        <span
-                          key={tag}
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
                           className="text-xs px-3 py-1.5 bg-neutral-800/80 text-neutral-200 rounded-full border border-neutral-700/50 group-hover:border-cyan-500/30 transition-colors duration-300"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
                     <Button
                       variant="default"
@@ -119,7 +119,7 @@ export function ProjectsSection() {
                       onClick={() => {}}
                     >
                       <span className="flex items-center gap-2">
-                        Learn More
+                    Learn More
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </span>
                     </Button>

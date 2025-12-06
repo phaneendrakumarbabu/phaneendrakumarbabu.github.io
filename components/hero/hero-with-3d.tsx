@@ -77,8 +77,8 @@ export function HeroWith3D() {
 
                 <motion.div className="mt-8 flex flex-col sm:flex-row gap-4 items-start sm:items-center" variants={itemVariants}>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      href="#projects"
+                  <Link
+                    href="#projects"
                       className="relative px-6 py-3 min-h-[48px] flex items-center justify-center bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-medium transition-all duration-300 overflow-hidden group touch-manipulation"
                     >
                       <span className="relative z-10">View My Work</span>
@@ -90,11 +90,11 @@ export function HeroWith3D() {
                         className="absolute inset-0 shadow-lg shadow-cyan-500/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                         initial={false}
                       />
-                    </Link>
+                  </Link>
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Link
-                      href="#contact"
+                  <Link
+                    href="#contact"
                       className="relative px-6 py-3 min-h-[48px] flex items-center justify-center border border-neutral-600 text-neutral-300 rounded-lg font-medium transition-all duration-300 overflow-hidden group touch-manipulation"
                     >
                       <span className="relative z-10">Get in Touch</span>
