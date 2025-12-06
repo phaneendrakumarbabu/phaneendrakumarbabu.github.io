@@ -54,7 +54,7 @@ export default function RootLayout({
       <body className={`font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false}>
         {children}
-        <Analytics />
+        {process.env.NEXT_PUBLIC_VERCEL_ENV && <Analytics />}
         </ThemeProvider>
       </body>
     </html>

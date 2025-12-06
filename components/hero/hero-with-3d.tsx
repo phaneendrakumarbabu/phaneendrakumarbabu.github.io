@@ -35,7 +35,7 @@ export function HeroWith3D() {
   return (
     <section
       id="home"
-      className="relative w-full h-screen overflow-hidden bg-black"
+      className="relative w-full min-h-screen overflow-visible bg-black"
       suppressHydrationWarning
     >
       {/* Shader background */}
@@ -45,17 +45,17 @@ export function HeroWith3D() {
       <Spotlight className="-top-40 left-0 md:left-60 md:-top-20" fill="rgba(34, 211, 238, 0.4)" />
 
       {/* Content */}
-      <div className="relative z-10 w-full h-full flex items-center justify-center px-4 md:px-8">
+      <div className="relative z-10 w-full min-h-screen flex items-center justify-center px-4 md:px-8 py-8 md:py-12">
         <motion.div className="w-full max-w-6xl" variants={containerVariants} initial="hidden" animate="visible">
-          <Card className="w-full bg-black/[0.7] border border-neutral-800/50 backdrop-blur-sm overflow-hidden h-[500px] md:h-[600px] shadow-2xl shadow-black/50">
-            <div className="flex flex-col md:flex-row h-full">
+          <Card className="w-full bg-black/[0.7] border border-neutral-800/50 backdrop-blur-sm overflow-visible h-auto min-h-[500px] md:min-h-[600px] shadow-2xl shadow-black/50">
+            <div className="flex flex-col md:flex-row h-full min-h-[500px] md:min-h-[600px]">
               {/* Left content */}
               <motion.div
-                className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center"
+                className="flex-1 p-8 md:p-12 relative z-10 flex flex-col justify-center overflow-visible"
                 variants={itemVariants}
               >
-                <motion.div variants={itemVariants}>
-                  <h1 className="text-4xl md:text-6xl font-bold text-balance">
+                <motion.div variants={itemVariants} className="overflow-visible">
+                  <h1 className="text-4xl md:text-6xl font-bold text-balance overflow-visible">
                     <span className="bg-gradient-to-b from-neutral-50 via-neutral-200 to-neutral-400 bg-clip-text text-transparent">
                       Goru Naga<br />
                       Phaneendra Kumar Babu
