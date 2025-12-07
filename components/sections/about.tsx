@@ -26,7 +26,7 @@ export function AboutSection() {
   return (
     <section id="about" className="relative py-20 md:py-32 px-4 md:px-8 bg-black overflow-hidden min-h-screen">
       <AnimatedShaderBackground />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/40 z-[1]" />
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.h2
