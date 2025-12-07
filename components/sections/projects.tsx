@@ -1,9 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Code, Box, ShoppingCart, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/neon-button"
 import { DottedSurface } from "@/components/ui/dotted-surface"
+import { GlowingEffect } from "@/components/ui/glowing-effect"
+import { cn } from "@/lib/utils"
 
 const projects = [
   {
@@ -12,6 +14,7 @@ const projects = [
     description: "A comprehensive design system with 50+ components, built with React and Storybook.",
     tags: ["React", "Design System", "Storybook"],
     gradient: "from-cyan-500/20 to-blue-500/20",
+    icon: <Code className="h-4 w-4" />,
   },
   {
     id: 2,
@@ -19,6 +22,7 @@ const projects = [
     description: "Immersive 3D visualization platform using Three.js and WebGL shaders.",
     tags: ["Three.js", "WebGL", "Performance"],
     gradient: "from-purple-500/20 to-pink-500/20",
+    icon: <Box className="h-4 w-4" />,
   },
   {
     id: 3,
@@ -26,6 +30,7 @@ const projects = [
     description: "Full-stack e-commerce solution with real-time inventory and advanced search.",
     tags: ["Next.js", "Node.js", "PostgreSQL"],
     gradient: "from-orange-500/20 to-red-500/20",
+    icon: <ShoppingCart className="h-4 w-4" />,
   },
   {
     id: 4,
@@ -33,6 +38,7 @@ const projects = [
     description: "Web-based tool for creating and animating motion graphics with Framer Motion.",
     tags: ["Framer Motion", "Canvas", "React"],
     gradient: "from-green-500/20 to-emerald-500/20",
+    icon: <Sparkles className="h-4 w-4" />,
   },
 ]
 
@@ -72,57 +78,53 @@ export function ProjectsSection() {
             {projects.map((project, index) => (
               <motion.div
                 key={project.id}
-                className="group relative"
+                className="min-h-[14rem] list-none"
                 variants={itemVariants}
-                whileHover={{ y: -8 }}
               >
-                <div className="relative p-8 rounded-2xl border border-neutral-800/50 bg-neutral-900/50 backdrop-blur-sm overflow-hidden transition-all duration-500 group-hover:border-cyan-500/50 group-hover:bg-neutral-900/80 shadow-lg shadow-black/50 group-hover:shadow-2xl group-hover:shadow-cyan-500/20">
-                  {/* Multi-layer shadow effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 blur-xl" />
-                  </div>
-                  
-                  {/* Gradient overlay on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-500`} />
-                  
-                  {/* Neon glow effect */}
-                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-cyan-500/0 via-cyan-500/10 to-blue-500/0 blur-xl" />
-                  </div>
-                  
-                  {/* Inner shadow for depth */}
-                  <div className="absolute inset-0 rounded-2xl shadow-inner shadow-black/50 opacity-50" />
-
-                <div className="relative z-10">
-                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors duration-300">
-                    {project.title}
-                  </h3>
-                    <p className="text-neutral-300 mb-6 leading-relaxed text-sm md:text-base">
-                      {project.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-6">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                          className="text-xs px-3 py-1.5 bg-neutral-800/80 text-neutral-200 rounded-full border border-neutral-700/50 group-hover:border-cyan-500/30 transition-colors duration-300"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                    <Button
-                      variant="default"
-                      size="default"
-                      className="text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10"
-                      onClick={() => {}}
-                    >
-                      <span className="flex items-center gap-2">
-                    Learn More
-                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
-                      </span>
-                    </Button>
+                <div className="relative h-full rounded-[1.25rem] border-[0.75px] border-border p-2 md:rounded-[1.5rem] md:p-3">
+                  <GlowingEffect
+                    spread={40}
+                    glow={true}
+                    disabled={false}
+                    proximity={64}
+                    inactiveZone={0.01}
+                    borderWidth={3}
+                  />
+                  <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-xl border-[0.75px] bg-background p-6 shadow-sm dark:shadow-[0px_0px_27px_0px_rgba(45,45,45,0.3)] md:p-6">
+                    <div className="relative flex flex-1 flex-col justify-between gap-3">
+                      <div className="w-fit rounded-lg border-[0.75px] border-border bg-muted p-2">
+                        {project.icon}
+                      </div>
+                      <div className="space-y-3">
+                        <h3 className="pt-0.5 text-xl leading-[1.375rem] font-semibold font-sans tracking-[-0.04em] md:text-2xl md:leading-[1.875rem] text-balance text-foreground">
+                          {project.title}
+                        </h3>
+                        <p className="font-sans text-sm leading-[1.125rem] md:text-base md:leading-[1.375rem] text-muted-foreground">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-2 pt-2">
+                          {project.tags.map((tag) => (
+                            <span
+                              key={tag}
+                              className="text-xs px-3 py-1.5 bg-muted/50 text-muted-foreground rounded-full border border-border"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <Button
+                          variant="default"
+                          size="default"
+                          className="mt-4 text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10"
+                          onClick={() => {}}
+                        >
+                          <span className="flex items-center gap-2">
+                            Learn More
+                            <ArrowRight className="w-4 h-4 transition-transform duration-300" />
+                          </span>
+                        </Button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
