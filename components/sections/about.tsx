@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { DottedSurface } from "@/components/ui/dotted-surface"
+import AnimatedShaderBackground from "@/components/ui/animated-shader-background"
 
 export function AboutSection() {
   const containerVariants = {
@@ -24,9 +24,9 @@ export function AboutSection() {
   }
 
   return (
-    <section id="about" className="relative py-20 md:py-32 px-4 md:px-8 bg-black overflow-hidden">
-      <DottedSurface className="absolute inset-0 z-0" />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/50 z-[1]" />
+    <section id="about" className="relative py-20 md:py-32 px-4 md:px-8 bg-black overflow-hidden min-h-screen">
+      <AnimatedShaderBackground />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/60 to-black/70 z-[1]" />
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.h2
