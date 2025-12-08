@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowRight, Code, Box, ShoppingCart, Sparkles } from "lucide-react"
+import { ArrowRight, Code, Box, ShoppingCart, Sparkles, Shield, Wrench, GraduationCap, Globe, Lock, Image, Key, Network } from "lucide-react"
 import { Button } from "@/components/ui/neon-button"
 import { DottedSurface } from "@/components/ui/dotted-surface"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
@@ -10,35 +10,75 @@ import { cn } from "@/lib/utils"
 const projects = [
   {
     id: 1,
-    title: "Interactive Design System",
-    description: "A comprehensive design system with 50+ components, built with React and Storybook.",
-    tags: ["React", "Design System", "Storybook"],
-    gradient: "from-cyan-500/20 to-blue-500/20",
-    icon: <Code className="h-4 w-4" />,
+    title: "Phishing Defence Extension",
+    description: "A Chrome browser extension designed to protect users from phishing websites and malicious links. Built with TypeScript and modern web technologies.",
+    tags: ["Chrome Extension", "TypeScript", "JavaScript", "Security"],
+    gradient: "from-red-500/20 to-orange-500/20",
+    icon: <Shield className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/phishing-defence-extension",
   },
   {
     id: 2,
-    title: "3D WebGL Experience",
-    description: "Immersive 3D visualization platform using Three.js and WebGL shaders.",
-    tags: ["Three.js", "WebGL", "Performance"],
-    gradient: "from-purple-500/20 to-pink-500/20",
-    icon: <Box className="h-4 w-4" />,
+    title: "RepairGenie",
+    description: "A civic issue reporting and tracking web application. Citizens can report infrastructure problems with photos, and administrators can manage and track issue status. Built with Flask, SQLite, and Tailwind CSS.",
+    tags: ["Flask", "Python", "SQLite", "Tailwind CSS"],
+    gradient: "from-blue-500/20 to-cyan-500/20",
+    icon: <Wrench className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/repairgenie-",
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description: "Full-stack e-commerce solution with real-time inventory and advanced search.",
-    tags: ["Next.js", "Node.js", "PostgreSQL"],
-    gradient: "from-orange-500/20 to-red-500/20",
-    icon: <ShoppingCart className="h-4 w-4" />,
+    title: "Phishing Awareness Training Platform",
+    description: "An interactive cybersecurity training platform that educates users about phishing attacks through hands-on simulations, training modules, and AI-powered dynamic scenario generation using Google Gemini API.",
+    tags: ["React", "Tailwind CSS", "Google Gemini API", "Cybersecurity"],
+    gradient: "from-indigo-500/20 to-purple-500/20",
+    icon: <GraduationCap className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/phishing-awareness-",
   },
   {
     id: 4,
-    title: "Motion Graphics Tool",
-    description: "Web-based tool for creating and animating motion graphics with Framer Motion.",
-    tags: ["Framer Motion", "Canvas", "React"],
-    gradient: "from-green-500/20 to-emerald-500/20",
-    icon: <Sparkles className="h-4 w-4" />,
+    title: "Phishing Awareness Defence Portal",
+    description: "A comprehensive web application for identifying, reporting, and learning about phishing attacks. Features include real-time URL analysis with VirusTotal API, password security checking, educational resources, security quizzes, and an admin dashboard.",
+    tags: ["Flask", "Python", "VirusTotal API", "SQLite"],
+    gradient: "from-emerald-500/20 to-teal-500/20",
+    icon: <Globe className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/phishing-awareness-defence-portal",
+  },
+  {
+    id: 5,
+    title: "Caesar Cipher Encryption Tool",
+    description: "A Python-based encryption and decryption program implementing the classical Caesar Cipher algorithm. Shifts letters by a fixed number of positions in the alphabet to encrypt messages and reverses the process for decryption. Part of Prodigy InfoTech Cybersecurity Internship.",
+    tags: ["Python", "Cryptography", "Caesar Cipher", "Encryption"],
+    gradient: "from-yellow-500/20 to-amber-500/20",
+    icon: <Lock className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/PRODIGY-CS-TASK1",
+  },
+  {
+    id: 6,
+    title: "Image Encryption Tool",
+    description: "A GUI application for encrypting and decrypting images using pixel manipulation techniques. Implements XOR operations and pixel swapping to obfuscate image data. Features an intuitive interface built with Tkinter, OpenCV, and NumPy. Part of Prodigy InfoTech Cybersecurity Internship.",
+    tags: ["Python", "OpenCV", "Tkinter", "Image Encryption"],
+    gradient: "from-pink-500/20 to-rose-500/20",
+    icon: <Image className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/PRODIGY-CS-TASK2",
+  },
+  {
+    id: 7,
+    title: "Password Complexity Checker",
+    description: "A Python-based tool that assesses password strength by evaluating criteria such as length, character types, special characters, and numbers. Helps users understand and enforce basic password security standards to prevent weak passwords. Part of Prodigy InfoTech Cybersecurity Internship.",
+    tags: ["Python", "JavaScript", "Password Security", "Web Interface"],
+    gradient: "from-violet-500/20 to-purple-500/20",
+    icon: <Key className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/PRODIGY-CS-TASK3",
+  },
+  {
+    id: 8,
+    title: "Network Packet Analyzer",
+    description: "A Python-based network analysis tool for capturing, analyzing, and inspecting network packets. Enables network traffic monitoring, protocol analysis, and security assessment. Helps identify potential security threats and understand network communication patterns. Part of Prodigy InfoTech Cybersecurity Internship.",
+    tags: ["Python", "Network Analysis", "Packet Capture", "Cybersecurity"],
+    gradient: "from-slate-500/20 to-gray-500/20",
+    icon: <Network className="h-4 w-4" />,
+    link: "https://github.com/phaneendrakumarbabu/PRODIGY-CS-TASK5",
   },
 ]
 
@@ -116,10 +156,14 @@ export function ProjectsSection() {
                           variant="default"
                           size="default"
                           className="mt-4 text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10"
-                          onClick={() => {}}
+                          onClick={() => {
+                            if (project.link) {
+                              window.open(project.link, "_blank", "noopener,noreferrer")
+                            }
+                          }}
                         >
                           <span className="flex items-center gap-2">
-                            Learn More
+                            {project.link ? "View Project" : "Learn More"}
                             <ArrowRight className="w-4 h-4 transition-transform duration-300" />
                           </span>
                         </Button>
