@@ -3,8 +3,9 @@
 import { motion } from "framer-motion"
 import { ArrowRight, Code, Box, ShoppingCart, Sparkles, Shield, Wrench, GraduationCap, Globe, Lock, Image, Key, Network } from "lucide-react"
 import { Button } from "@/components/ui/neon-button"
-import { DottedSurface } from "@/components/ui/dotted-surface"
 import { GlowingEffect } from "@/components/ui/glowing-effect"
+import { LiquidButton } from "@/components/ui/liquid-glass-button"
+import { ShaderAnimation } from "@/components/ui/shader-lines"
 import { cn } from "@/lib/utils"
 
 const projects = [
@@ -103,8 +104,10 @@ export function ProjectsSection() {
   }
 
   return (
-    <section id="projects" className="relative py-20 md:py-32 px-4 md:px-8 bg-neutral-950/80 overflow-hidden">
-      <DottedSurface className="absolute inset-0 z-0" />
+    <section id="projects" className="relative py-20 md:py-32 px-4 md:px-8 bg-neutral-950 overflow-hidden">
+      <div className="absolute inset-0 z-0">
+        <ShaderAnimation />
+      </div>
       <div className="relative z-10 max-w-6xl mx-auto">
         <motion.div variants={containerVariants} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <motion.h2
@@ -114,9 +117,9 @@ export function ProjectsSection() {
             Featured Projects
           </motion.h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {projects.map((project, index) => (
-              <motion.div
+              <motion.li
                 key={project.id}
                 className="min-h-[14rem] list-none"
                 variants={itemVariants}
@@ -152,28 +155,38 @@ export function ProjectsSection() {
                             </span>
                           ))}
                         </div>
-                        <Button
-                          variant="default"
-                          size="default"
-                          className="mt-4 text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10"
-                          onClick={() => {
-                            if (project.link) {
+                        {project.link ? (
+                          <LiquidButton
+                            className="mt-4 text-white border rounded-full"
+                            size="lg"
+                            onClick={() => {
                               window.open(project.link, "_blank", "noopener,noreferrer")
-                            }
-                          }}
-                        >
-                          <span className="flex items-center gap-2">
-                            {project.link ? "View Project" : "Learn More"}
-                            <ArrowRight className="w-4 h-4 transition-transform duration-300" />
-                          </span>
-                        </Button>
+                            }}
+                          >
+                            <span className="flex items-center gap-2">
+                              View Project
+                              <ArrowRight className="w-4 h-4 transition-transform duration-300" />
+                            </span>
+                          </LiquidButton>
+                        ) : (
+                          <Button
+                            variant="default"
+                            size="default"
+                            className="mt-4 text-cyan-400 border-cyan-500/30 hover:border-cyan-500/50 bg-cyan-500/5 hover:bg-cyan-500/10"
+                          >
+                            <span className="flex items-center gap-2">
+                              Learn More
+                              <ArrowRight className="w-4 h-4 transition-transform duration-300" />
+                            </span>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>
                 </div>
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ul>
         </motion.div>
       </div>
     </section>
