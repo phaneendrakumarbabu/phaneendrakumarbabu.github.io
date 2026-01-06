@@ -150,6 +150,16 @@
       scroll-padding-top: 100px;
     }
   }
+  /* Hide Next.js portal element */
+  nextjs-portal {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    opacity: 0 !important;
+  }
 }
 
 @keyframes spotlight {
